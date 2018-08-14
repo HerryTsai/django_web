@@ -1,0 +1,34 @@
+<!-- detail.html-->
+{% extends "base.html" %}
+{% block title %} 最美景觀 {% endblock %}
+{% block content %}
+
+<div class="container" align=center>
+    <div class="row">
+        <div class="col-sm-12 col-md-4">
+            <h3 class="card-header">熱門</h3>
+            <div class="card-body">
+                <h5 class="card-title"> {{p.title}} </h5>
+                <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+            </div>
+            {% load static %}
+            <img style="height: 200px; width: 100%; display: block;" src= '/static/{{ p.image_url }}' alt="Card image">
+            <div class="card-body">
+
+                <p class="card-text"> {{p.body}} </p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"> {{p.vote}} </li>
+                <li class="list-group-item">票</li>
+            </ul>
+            <div class="card-body">
+                <a href="/mysite/list/{{p.id}}" class="card-link">載入看更多</a>
+            </div>
+            <div class="card-footer text-muted">
+                {{p.pub_date}}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
